@@ -1,4 +1,4 @@
 # Mi Proyecto Final
-- Noemi Guadalupe Hernanandez Palacios
+- Noemi Guadalupe Hernandez Palacios
 - Marco Antonio Santiago Perez
 - Jorge Luis Tovar Rebollo

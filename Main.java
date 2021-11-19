@@ -138,6 +138,63 @@ public class TablaSimplex {
         return PivoteFil;
 
         }
+
+    /*
+     * This is to simplify the pivot row so that the pivot can be made 1
+     */
+    private void SimpliFilPivote(int PivoteFil, double PivoteNum) {
+        for (int i = 0; i < tabla[0].length; i++) {
+            tabla[PivoteFil][i] = tabla[PivoteFil][i] / PivoteNum;
+        }
+    }
+
+    /*
+     * This is to simplify the rest of the rows
+     */
+    private void SimpliTFilPivote(int PivoteFil, int PivoteColumn) {
+        for (int i = 0; i < tabla.length; i++) {
+            if (tabla[i][PivoteColumn] != 0 && i != PivoteFil) {
+                if (tabla[i][PivoteColumn] > 0) {
+                    //When it's Positive
+                    double valor = tabla[i][PivoteColumn] * -1;
+                    for (int j = 0; j < tabla[0].length; j++) {
+                        tabla[i][j] = tabla[PivoteFil][j] * valor + tabla[i][j];
+                    }
+                } else {
+                    //When it's Negative
+                    double valor = tabla[i][PivoteColumn] * -1;
+                    for (int j = 0; j < tabla[0].length; j++) {
+                        tabla[i][j] = tabla[PivoteFil][j] * valor + tabla[i][j];
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+     * Establece los valores resultados en la tabla
+     */
+    private void ResultadosTabla() {
+        System.out.println("Numero de Variables = " + Num_Var);
+        result = new double[Num_Var];
+        int k=0;
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < Num_Var; j++) {
+                if (tabla[i][j] == 1) {
+                    result[j] = tabla[i][tabla[0].length - 2];
+                    k=j;
+                }
+            }
+        }
+        z=tabla[0][tabla[0].length - 2];
+        System.out.println("");
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(" x" + (i + 1) + " = " + result[i]);
+        }
+    }
+
+
+
     }
 }
 

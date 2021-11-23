@@ -172,7 +172,7 @@ public class TablaSimplex {
     }
 
     /*
-     * Establece los valores resultados en la tabla
+     * Results in Table
      */
     private void ResultadosTabla() {
         System.out.println("Numero de Variables = " + Num_Var);

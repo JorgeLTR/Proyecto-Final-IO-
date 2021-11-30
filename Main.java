@@ -10,7 +10,7 @@ public Proyecto_Simplex{
      *@author: Jorge Luis Tovar Rebollo (JorgeLTR)
      *@about: This code in java is about the simplex method which 
      is our final project of the Operations Research subject
-     */
+     **/
 public class Problema_Simplex {
    TablaSimplex proceso;
    boolean  accionMax; //maximize = true, minimize = false
